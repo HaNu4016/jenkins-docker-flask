@@ -2,16 +2,13 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout')
-      {
+        stage('Checkout') {
             steps {
                 git 'https://github.com/HaNu4016/jenkins-docker-flask.git'
             }
         }
-        stage('Build Docker Image')
-      {
-            steps
-        {
+        stage('Build Docker Image') {
+            steps {
                 sh 'docker build -t jenkins-docker-flask .'
             }
         }
@@ -22,3 +19,4 @@ pipeline {
         }
     }
 }
+
